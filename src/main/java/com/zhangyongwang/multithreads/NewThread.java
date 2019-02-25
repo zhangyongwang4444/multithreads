@@ -6,7 +6,7 @@ public class NewThread extends Thread {
     NewThread(String name) {
         // Create a new , second thread
         super(name);
-        System.out.println("Child thread:" + this);
+        System.out.println("Child Thread:" + this);
         // 显式的 开始 执行这个线程  --> 做一些基本的初始化操作  --> 执行 run()
         start(); // Start the thread
         // return
@@ -32,7 +32,7 @@ public class NewThread extends Thread {
         // 创建新的子线程
         NewThread t1 = new NewThread("Thread1"); //  create a new thread
         // 调用完构造方法，start() 后，子线程开始执行，主线程返回到main()方法，继续执行下面的代码
-        NewThread t2 = new NewThread("Thread2");
+        NewThread2 t2 = new NewThread2("Thread2");
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Main Thread:" + i);
