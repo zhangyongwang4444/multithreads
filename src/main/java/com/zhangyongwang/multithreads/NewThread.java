@@ -3,18 +3,13 @@ package com.zhangyongwang.multithreads;
 // 自定义的 线程类 NewThread
 // 运行的 代码逻辑和  main() (主线程) 不同
 public class NewThread extends Thread {
-    NewThread() {
+    NewThread(String name) {
         // Create a new , second thread
-        super("Demo Thread");
+        super(name);
         System.out.println("Child thread:" + this);
         // 显式的 开始 执行这个线程  --> 做一些基本的初始化操作  --> 执行 run()
-//        start(); // Start the thread
+        start(); // Start the thread
         // return
-    }
-
-    public void startThread() {
-        System.out.println("Child thread" + "开始执行");
-        start();
     }
 
 
@@ -35,9 +30,9 @@ public class NewThread extends Thread {
     // 主线程逻辑
     public static void main(String args[]) {
         // 创建新的子线程
-        NewThread t = new NewThread(); //  create a new thread
-        t.startThread();
+        NewThread t1 = new NewThread("Thread1"); //  create a new thread
         // 调用完构造方法，start() 后，子线程开始执行，主线程返回到main()方法，继续执行下面的代码
+        NewThread t2 = new NewThread("Thread2");
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Main Thread:" + i);
