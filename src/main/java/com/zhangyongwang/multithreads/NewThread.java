@@ -32,7 +32,9 @@ public class NewThread extends Thread {
         // 创建新的子线程
         NewThread t1 = new NewThread("Thread1"); //  create a new thread
         // 调用完构造方法，start() 后，子线程开始执行，主线程返回到main()方法，继续执行下面的代码
-        NewThread2 t2 = new NewThread2("Thread2");
+        NewThread t2 = new NewThread("Thread2");
+
+        NewThread t3 = new NewThread("Thread3");
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Main Thread:" + i);

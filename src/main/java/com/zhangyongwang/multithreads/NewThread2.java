@@ -17,5 +17,4 @@ public class NewThread2 extends Thread {
         System.out.println("只有这个逻辑，只是来皮一皮");
     }
 
-
 }
